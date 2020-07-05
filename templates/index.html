@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Index{% endblock titulo %}</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    {% block extracss %}
+    <style>
+        body {
+        padding-top: 25px;
+        padding-left: 400px;
+        padding-right: 400px;
+        text-align:center;
+        }
+    </style>
+    {% endblock extracss %}
+</head>
+<body>
+    {% block body %}
+    <h1>Sistema de Informes On-Tour</h1>
+    <hr>
+    <p>Sistema Mantenedor de Datos</p>
+    <a href="http://127.0.0.1:8000/admin">Ir al Sistema</a>
+    <hr>
+    <p>Para obtener el reporte haga click en el enlace</p>
+    <a href="http://127.0.0.1:8000/contrato/listar_contrato/">Ver Reporte</a>
+    {% endblock body %}
+
+
+    {% block extrajs %}
+    {% endblock extrajs %}
+    
+</body>
+</html>

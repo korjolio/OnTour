@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+
+{% block titulo %}
+    Listado Contratos
+{% endblock titulo %}
+
+{% block body %}
+
+    {% if contratos %}
+        <table border=2>
+            <thead>
+                <tr>
+                    <th>Nro. Contrato</th>
+                    <th>Vendedor</th>
+                    <th>Fecha Contrato</th>
+                    <th>Fecha Viaje</th>
+                    <th>Apoderado</th>
+                    <th>Nro. Alumnos</th>
+                    <th>Institución</th>
+                    <th>Póliza Seguro</th>
+                    <th>Monto</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for contrato in contratos %}
+                <tr>
+                    <td>{{contrato.id_contrato}}</td>
+                    <td>{{contrato.vendedor_id}}</td>
+                    <td>{{contrato.fecha_contrato}}</td>
+                    <td>{{contrato.fecha_viaje}}</td>
+                    <td>{{contrato.nombre_completo_apoderado}}</td>
+                    <td>{{contrato.nro_alumnos}}</td>
+                    <td>{{contrato.institucion_id}}</td>
+                    <td>{{contrato.seguro_id}}</td>
+                    <td>{{contrato.monto}}</td>                                         
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <h1>No existen contratos registrados</h1>
+        {% endif %}
+
+    {% endblock body %}
